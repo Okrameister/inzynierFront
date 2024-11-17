@@ -1,0 +1,101 @@
+/* UserProfile.css */
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-icon {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.user-edit-form {
+    width: 100%;
+}
+
+.user-edit-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.user-edit-form input,
+.user-edit-form select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-button {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button:hover {
+    background-color: #ff7a00;
+}
+
+.cancel-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
+}
+
+.user-details {
+    width: 100%;
+    font-size: 16px;
+}
+
+.edit-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-button:hover {
+    background-color: #0069d9;
+}

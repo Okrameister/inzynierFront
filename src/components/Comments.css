@@ -1,0 +1,113 @@
+/* Comments.css */
+
+.comments-container {
+    border-radius: 10px;
+}
+
+.comments-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.comment-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-author {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.comment-content {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.comment-likes-container {
+    display: flex;
+    align-items: center;
+}
+
+.comment-likes {
+    font-size: 14px;
+    color: #000;
+    margin-right: 10px;
+}
+
+.comment-like-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff8c00;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.comment-like-button:hover {
+    background-color: #ff7a00;
+}
+
+.add-comment-form {
+    margin-top: 20px;
+}
+
+.new-comment-textarea {
+    max-width: calc(100% - 20px); /* Matches the width of comment-item considering padding */
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.add-comment-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-comment-button:hover {
+    background-color: #ff7a00;
+}
+
+.comment-delete-button {
+    background: none;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.comment-delete-button:hover {
+    color: #cc0000;
+}

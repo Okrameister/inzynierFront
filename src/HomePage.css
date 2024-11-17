@@ -1,0 +1,32 @@
+/* HomePage.css */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f7f7f7; /* Stonowana kolorystyka tła */
+
+}
+
+.post-list-section {
+    padding: 20px;
+    background-color: #ffffff; /* Tło dla postów - białe dla kontrastu */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.auth-section {
+    width: 55%;
+    padding: 20px;
+    background-color: #ffffff; /* Tło dla panelu logowania - białe */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+h1, h2 {
+    color: #ff8c00; /* Pomarańczowe detale dla nagłówków */
+}
