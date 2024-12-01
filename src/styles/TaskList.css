@@ -1,0 +1,30 @@
+/* TaskList.css */
+
+.create-task-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.create-task-button:hover {
+    background-color: #005bb5;
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.task-list li:hover {
+    background-color: #e6e6e6;
+}

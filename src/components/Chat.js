@@ -1,71 +1,71 @@
+// ChatComponent.jsx
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Chat.css';
+import ConversationList from './ConversationList';
+import MessageList from './MessageList';
+import NewConversationModal from './NewConversationModal';
+import '../styles/Chat.css'; // Importowanie pliku CSS
 
-const Chat = ({ currentUserEmail, otherUserEmail }) => {
-    const [messages, setMessages] = useState([]);
-    const [newMessage, setNewMessage] = useState('');
+const Chat = () => {
+    const [conversations, setConversations] = useState([]);
+    const [selectedConversation, setSelectedConversation] = useState(null);
+    const [showNewConversationModal, setShowNewConversationModal] = useState(false);
+
+    const token = localStorage.getItem('token'); // Zakładamy, że token jest przechowywany w localStorage
 
     useEffect(() => {
-        // Fetch messages when the component is mounted or when otherUserEmail changes
-        const fetchMessages = async () => {
-            try {
-                const response = await axios.get('/api/chat/messages', {
-                    params: { otherEmail: otherUserEmail },
-                    headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                });
-                setMessages(response.data);
-            } catch (error) {
-                console.error('Error fetching messages:', error);
+        fetch('/api/chat/conversations', {
+            headers: {
+                'Authorization': 'Bearer ' + token
             }
-        };
+        })
+            .then(response => response.json())
+            .then(data => setConversations(data))
+            .catch(error => console.error('Błąd podczas pobierania konwersacji:', error));
+    }, [token]);
 
-        fetchMessages();
-    }, [otherUserEmail]);
+    const handleConversationClick = (conversation) => {
+        setSelectedConversation(conversation);
+    };
 
-    const handleSendMessage = async () => {
-        if (newMessage.trim() === '') return;
-
-        try {
-            const response = await axios.post('/api/chat/send', null, {
-                params: {
-                    receiverEmail: otherUserEmail,
-                    content: newMessage
-                },
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
-                }
-            });
-
-            // Append the new message to the chat
-            setMessages([...messages, response.data]);
-            setNewMessage('');
-        } catch (error) {
-            console.error('Error sending message:', error);
-        }
+    const handleNewConversation = (newConversation) => {
+        setConversations([...conversations, newConversation]);
+        setShowNewConversationModal(false);
+        setSelectedConversation(newConversation);
     };
 
     return (
         <div className="chat-container">
-            <div className="messages-container">
-                {messages.map((message, index) => (
-                    <div key={index} className={`message ${message.sender.email === currentUserEmail ? 'sent' : 'received'}`}>
-                        <div className="message-content">{message.content}</div>
-                        <div className="message-timestamp">{new Date(message.timestamp).toLocaleString()}</div>
-                    </div>
-                ))}
-            </div>
-            <div className="new-message-container">
-                <input
-                    type="text"
-                    value={newMessage}
-                    onChange={(e) => setNewMessage(e.target.value)}
-                    placeholder="Type a message..."
+            <div className="sidebar">
+                <button className="new-conversation-button" onClick={() => setShowNewConversationModal(true)}>
+                    Nowa konwersacja
+                </button>
+                <ConversationList
+                    conversations={conversations}
+                    onConversationClick={handleConversationClick}
+                    token={token}
+                    selectedConversation={selectedConversation}
                 />
-                <button onClick={handleSendMessage}>Send</button>
             </div>
+            <div className="chat-content">
+                {selectedConversation ? (
+                    <MessageList
+                        conversation={selectedConversation}
+                        token={token}
+                    />
+                ) : (
+                    <div className="no-conversation">
+                        <p>Wybierz konwersację, aby rozpocząć czat.</p>
+                    </div>
+                )}
+            </div>
+
+            {showNewConversationModal && (
+                <NewConversationModal
+                    onClose={() => setShowNewConversationModal(false)}
+                    onCreate={handleNewConversation}
+                    token={token}
+                />
+            )}
         </div>
     );
 };

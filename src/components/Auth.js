@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Auth.css';
+import '../styles/Auth.css';
 
 function Auth({ isLoginDefault = true }) {
     const [isSignup, setIsSignup] = useState(false);

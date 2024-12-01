@@ -1,0 +1,52 @@
+/* TaskDetails.css */
+
+.task-details h2 {
+    margin-top: 0;
+}
+
+.task-details p {
+    font-size: 16px;
+}
+
+.task-details h3 {
+    margin-top: 20px;
+}
+
+.task-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-details li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-details li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.task-details li button:hover {
+    background-color: #005bb5;
+}
+
+.task-details input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.task-details button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.task-details button:hover {
+    background-color: #e07a00;
+}

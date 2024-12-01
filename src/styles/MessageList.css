@@ -1,0 +1,86 @@
+/* MessageList.css */
+
+.message-list-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.message-list-header {
+  padding: 15px;
+  background-color: #0069d9;
+  color: #fff;
+}
+
+.message-list-header h3 {
+  margin: 0;
+}
+
+.message-list {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+}
+
+.message-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Styl dla wiadomości własnych */
+.own-message {
+  justify-content: flex-end;
+}
+
+.own-message .message-content {
+  background-color: #0069d9;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 60%;
+}
+
+/* Styl dla wiadomości innych użytkowników */
+.other-message {
+  justify-content: flex-start;
+}
+
+.other-message .message-content {
+  background-color: #e6e6e6;
+  color: #333;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 60%;
+}
+
+.message-sender {
+  font-weight: bold;
+  margin-right: 5px;
+  color: #0069d9;
+}
+
+.message-input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.send-button {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #e07a00;
+}

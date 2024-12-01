@@ -1,0 +1,18 @@
+/* TaskComponent.css */
+
+.task-container {
+    display: flex;
+    height: 100vh;
+}
+
+.task-list {
+    width: 250px;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f7f7f7;
+}
+
+.task-content {
+    flex: 1;
+    padding: 20px;
+}

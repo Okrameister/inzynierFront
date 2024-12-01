@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEdit, faSave, faTimes } from '@fortawesome/free-solid-svg-icons';
-import './Profile.css';
+import '../styles/Profile.css';
 
 const Profile = () => {
     const [user, setUser] = useState(null);

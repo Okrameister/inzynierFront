@@ -1,0 +1,32 @@
+/* ConversationList.css */
+
+.conversation-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.conversation-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.conversation-item:hover {
+    background-color: #f0f0f0;
+}
+
+.conversation-item.active {
+    background-color: #e6f0ff;
+}
+
+.conversation-name {
+    margin: 0;
+    font-size: 16px;
+    color: #0069d9;
+}
+
+.conversation-last-message {
+    margin: 5px 0 0;
+    color: #555;
+    font-size: 14px;
+}

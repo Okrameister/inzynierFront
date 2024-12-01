@@ -8,12 +8,17 @@ import Comments from './components/Comments';
 import HomePage from './HomePage';
 import Header from './components/Header';
 import Chat from './components/Chat';
+import Task from './components/Task';
+
 
 function App() {
     return (
         <Router>
             <Header />
+
             {/*<Chat />*/}
+            {/*<Task />*/}
+
             <Routes>
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/auth" element={<Auth />} />

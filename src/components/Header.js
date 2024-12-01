@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, redirect} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown, faUser } from '@fortawesome/free-solid-svg-icons';
-import './Header.css';
+import '../styles/Header.css';
 import logo from '../assets/logo.png';
 
 const Header = () => {

@@ -1,0 +1,29 @@
+/* CreateTaskForm.css */
+
+.create-task-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.create-task-form h2 {
+    margin-top: 0;
+}
+
+.create-task-form input,
+.create-task-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.create-task-form button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.create-task-form button:hover {
+    background-color: #e07a00;
+}

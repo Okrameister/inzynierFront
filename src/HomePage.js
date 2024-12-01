@@ -2,7 +2,7 @@
 import React from 'react';
 import PostList from './components/PostList';
 import Auth from './components/Auth';
-import './HomePage.css';
+import './styles/HomePage.css';
 const isLogged = localStorage.getItem('isLogged');
 
 const HomePage = () => {

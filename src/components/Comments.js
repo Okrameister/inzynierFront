@@ -1,7 +1,7 @@
 // Comments.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Comments.css';
+import '../styles/Comments.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Comments from './Comments';
 import { useParams } from 'react-router-dom';
-import './Post.css';
+import '../styles/Post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 const isLogged = localStorage.getItem('isLogged');
