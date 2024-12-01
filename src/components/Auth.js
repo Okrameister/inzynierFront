@@ -50,7 +50,7 @@ function Auth({ isLoginDefault = true }) {
                 });
                 if(isSignup){
                     window.location.href = '/auth';
-                }else window.location.href = '/home';
+                }else window.location.href = '/';
             })
             .catch(error => {
                 setError('An error occurred. Please check your details and try again.');

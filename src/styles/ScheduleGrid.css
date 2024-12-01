@@ -1,0 +1,21 @@
+.schedule-grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.schedule-grid th,
+.schedule-grid td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.schedule-grid th {
+    background-color: #f2f2f2;
+}
+
+.schedule-grid td {
+    height: 100px;
+    vertical-align: top;
+    position: relative;
+}
