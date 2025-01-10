@@ -108,7 +108,9 @@ const Comments = ({ postId }) => {
             <ul className="comments-list">
                 {comments.map((comment) => (
                     <li key={comment.id} className="comment-item">
-                        <p className="comment-author">{comment.user.firstName} {comment.user.lastName}</p>
+                        <p className="comment-author">
+                            {comment.user ? `${comment.user.firstName} ${comment.user.lastName}` : "Anonimowy użytkownik"}
+                        </p>
                         <p className="comment-content">{comment.content}</p>
                         <div className="comment-likes-container">
                             <span className="comment-likes">Polubienia: {comment.liked.length}</span>

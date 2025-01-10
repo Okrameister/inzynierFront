@@ -1,15 +1,15 @@
-/* Post.css */
-
 .post-container {
     padding: 20px;
     margin-bottom: 20px;
-
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .post-header {
     display: flex;
-    align-items: flex-end;
-    margin-bottom: 5px;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .post-caption {
@@ -17,13 +17,11 @@
     font-weight: 600;
     color: #333;
     margin-right: 10px;
-    margin-bottom: 0;
 }
 
 .post-author {
     font-size: 16px;
     color: #666;
-    margin-bottom: 0;
 }
 
 .post-likes {
@@ -44,16 +42,21 @@
     color: #ff7a00;
 }
 
-.post-image {
+.post-image,
+.post-video {
     max-width: 100%;
     height: auto;
     margin-bottom: 15px;
     border-radius: 8px;
 }
 
-.post-video {
-    max-width: 100%;
-    height: auto;
+/* Nowy styl dla treści posta */
+.post-content {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
     margin-bottom: 15px;
-    border-radius: 8px;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
 }

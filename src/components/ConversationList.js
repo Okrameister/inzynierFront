@@ -1,23 +1,19 @@
-// ConversationList.jsx
 import React, { useEffect, useState } from 'react';
 import '../styles/ConversationList.css';
 
-const ConversationList = ({ conversations, onConversationClick, token, selectedConversation }) => {
+const ConversationList = ({ conversations = [], onConversationClick, token, selectedConversation }) => {
     const [lastMessages, setLastMessages] = useState({});
     const [currentUserId, setCurrentUserId] = useState(null);
     const [isLoadingUser, setIsLoadingUser] = useState(true);
 
     useEffect(() => {
-        // Pobierz dane aktualnego użytkownika z backendu
         fetch('/api/users/profile', {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Błąd sieci');
-                }
+                if (!response.ok) throw new Error('Błąd sieci');
                 return response.json();
             })
             .then(user => {
@@ -31,6 +27,8 @@ const ConversationList = ({ conversations, onConversationClick, token, selectedC
     }, [token]);
 
     useEffect(() => {
+        if (conversations.length === 0) return; // Jeśli brak rozmów, nie wykonuj zapytania
+
         conversations.forEach(conversation => {
             fetch(`/api/chat/conversations/${conversation.id}/messages`, {
                 headers: {
@@ -51,22 +49,11 @@ const ConversationList = ({ conversations, onConversationClick, token, selectedC
     }, [conversations, token]);
 
     const getConversationName = (conversation) => {
-        if (isLoadingUser) {
-            return 'Ładowanie...';
-        }
+        if (isLoadingUser) return 'Ładowanie...';
+        if (conversation.isGroup) return conversation.name || 'Konwersacja grupowa';
 
-        if (conversation.isGroup) {
-            return conversation.name || 'Konwersacja grupowa';
-        } else {
-            // Konwersacja indywidualna
-            const participants = conversation.participants;
-            const otherParticipant = participants.find(user => user.id !== currentUserId);
-            if (otherParticipant) {
-                return `${otherParticipant.firstName} ${otherParticipant.lastName}`;
-            } else {
-                return 'Konwersacja';
-            }
-        }
+        const otherParticipant = conversation.participants.find(user => user.id !== currentUserId);
+        return otherParticipant ? `${otherParticipant.firstName} ${otherParticipant.lastName}` : 'Konwersacja';
     };
 
     if (isLoadingUser) {
@@ -75,20 +62,22 @@ const ConversationList = ({ conversations, onConversationClick, token, selectedC
 
     return (
         <div className="conversation-list">
-            {conversations.map(conversation => (
-                <div
-                    key={conversation.id}
-                    className={`conversation-item ${selectedConversation && selectedConversation.id === conversation.id ? 'active' : ''}`}
-                    onClick={() => onConversationClick(conversation)}
-                >
-                    <h4 className="conversation-name">{getConversationName(conversation)}</h4>
-                    <p className="conversation-last-message">
-                        {lastMessages[conversation.id]
-                            ? lastMessages[conversation.id].content
-                            : 'Brak wiadomości'}
-                    </p>
-                </div>
-            ))}
+            {conversations.length > 0 ? (
+                conversations.map(conversation => (
+                    <div
+                        key={conversation.id}
+                        className={`conversation-item ${selectedConversation?.id === conversation.id ? 'active' : ''}`}
+                        onClick={() => onConversationClick(conversation)}
+                    >
+                        <h4 className="conversation-name">{getConversationName(conversation)}</h4>
+                        <p className="conversation-last-message">
+                            {lastMessages[conversation.id]?.content || 'Brak wiadomości'}
+                        </p>
+                    </div>
+                ))
+            ) : (
+                <p className="no-conversations">Brak konwersacji</p>
+            )}
         </div>
     );
 };

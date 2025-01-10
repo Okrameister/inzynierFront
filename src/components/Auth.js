@@ -46,7 +46,7 @@ function Auth({ isLoginDefault = true }) {
                     password: '',
                     firstName: '',
                     lastName: '',
-                    gender: ''
+                    gender: 'Mężczyzna'
                 });
                 if(isSignup){
                     window.location.href = '/auth';
@@ -80,30 +80,6 @@ function Auth({ isLoginDefault = true }) {
                             onChange={handleChange}
                             required
                         />
-                        <div className="gender-selection">
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="Mężczyzna"
-                                    checked={formData.gender === 'Mężczyzna'}
-                                    onChange={handleChange}
-                                    required
-                                />
-                                Mężczyzna
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="Kobieta"
-                                    checked={formData.gender === 'Kobieta'}
-                                    onChange={handleChange}
-                                    required
-                                />
-                                Kobieta
-                            </label>
-                        </div>
                     </>
                 )}
                 <input
@@ -122,6 +98,32 @@ function Auth({ isLoginDefault = true }) {
                     onChange={handleChange}
                     required
                 />
+                {isSignup && (
+                <div className="gender-selection">
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Mężczyzna"
+                            checked={formData.gender === 'Mężczyzna'}
+                            onChange={handleChange}
+                            required
+                        />
+                        Mężczyzna
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Kobieta"
+                            checked={formData.gender === 'Kobieta'}
+                            onChange={handleChange}
+                            required
+                        />
+                        Kobieta
+                    </label>
+                </div>)}
+
                 <div className="button-container">
                     <button type="submit" className="auth-submit-button">{isSignup ? 'Sign Up' : 'Sign In'}</button>
                     <button className="toggle-form-button no-hover-effect" onClick={() => setIsSignup(!isSignup)}>

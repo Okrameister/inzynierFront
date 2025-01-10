@@ -1,18 +1,25 @@
 import React from 'react';
-import {Link, redirect} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faThumbsDown, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.css';
 import logo from '../assets/logo.png';
 
 const Header = () => {
+    const navigate = useNavigate();
+
     const handleLogout = () => {
         localStorage.removeItem('isLogged');
         window.location.href = '/auth';
     };
 
     const handleProfile = () => {
-        window.location.href = '/profile';
+        navigate('/profile');
+    };
+
+    const handleHomeClick = () => {
+        localStorage.setItem("groupId", "0");
+        navigate('/'); // Przekierowanie do strony głównej
     };
 
     const isLogged = localStorage.getItem('isLogged');
@@ -21,9 +28,13 @@ const Header = () => {
         <header className="header-container">
             <div className="header-content">
                 <div className="header-logo">
-                    <Link to="/">
-                        <img src={logo} alt="Student Link Logo" className="header-logo-image" />
-                    </Link>
+                    <img
+                        src={logo}
+                        alt="Student Link Logo"
+                        className="header-logo-image"
+                        onClick={handleHomeClick}
+                        style={{ cursor: 'pointer' }} // Ustawienie kursora na klikalny
+                    />
                 </div>
                 {isLogged && (
                     <>

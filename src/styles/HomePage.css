@@ -2,7 +2,6 @@
 .home-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
     background-color: #f7f7f7; /* Stonowana kolorystyka tła */
 
 }
@@ -12,7 +11,7 @@
     background-color: #ffffff; /* Tło dla postów - białe dla kontrastu */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    margin: 10px 10px 10px 0;
 }
 
 .auth-section {

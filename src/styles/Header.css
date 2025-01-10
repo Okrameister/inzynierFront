@@ -5,8 +5,11 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    margin-bottom: 10px;
-    position: relative;
+    position: fixed; /* Ustawienie nagłówka na stałą pozycję */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
 }
 
 .header-content {
@@ -65,4 +68,17 @@
 
 .header-logout-button:hover {
     background-color: #ff7a00;
+}
+
+body {
+    padding-top: 170px;
+}
+
+.group-name {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
 }
