@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/TaskList.css';
 
+const groupId = localStorage.getItem("groupId");
+
 const TaskList = ({ onSelectTask, token }) => {
     const [tasks, setTasks] = useState([]);
-
     useEffect(() => {
-        fetch('/api/tasks', {
+        fetch('/api/tasks/group/'+groupId, {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
@@ -25,7 +26,7 @@ const TaskList = ({ onSelectTask, token }) => {
                 Utwórz nowe zadanie
             </button>
             <ul>
-                {tasks.map(task => (
+                {tasks?.map?.(task => (
                     <li key={task.id} onClick={() => onSelectTask(task)}>
                         {task.title}
                     </li>

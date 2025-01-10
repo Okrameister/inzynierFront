@@ -15,9 +15,10 @@ const PostList = () => {
 
     const fetchPosts = () => {
         const token = localStorage.getItem('token');
+        const groupId = localStorage.getItem('groupId');
 
 
-        axios.get('/api/posts', {
+        axios.get('/api/posts/group/'+ groupId, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

@@ -1,11 +1,16 @@
 /* PostList.css */
 
+.post-list-container{
+    width: 100%;
+}
+
 .post-list-container h1 {
     font-size: 32px;
     font-weight: 700;
     color: #ff8c00; /* Pomarańczowy akcent dla nagłówka */
     text-align: center;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .post-item {

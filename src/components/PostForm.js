@@ -14,12 +14,14 @@ const PostForm = ({ onPostCreated }) => {
         e.preventDefault();
 
         const token = localStorage.getItem('token');
+        const groupId = localStorage.getItem('groupId');
 
         const postData = {
             caption,
             content,
             image,
-            video
+            video,
+            groupId
         };
 
         axios.post('api/posts', postData, {

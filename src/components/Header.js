@@ -19,7 +19,7 @@ const Header = () => {
 
     const handleHomeClick = () => {
         localStorage.setItem("groupId", "0");
-        navigate('/'); // Przekierowanie do strony głównej
+        window.location.href = '/';
     };
 
     const isLogged = localStorage.getItem('isLogged');
