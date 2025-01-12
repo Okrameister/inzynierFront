@@ -13,10 +13,12 @@
 }
 
 .modal {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 20px;
     width: 400px;
-    max-height: 80vh;
+    max-height: 100vh;
     overflow-y: auto;
     border-radius: 5px;
 }
@@ -24,22 +26,35 @@
 .modal h2 {
     margin-top: 0;
     color: #0069d9;
+    font-size: 30px;
+}
+
+.modal h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    color: #0069d9;
+    font-size: 20px;
 }
 
 .checkbox-label {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    color: white;
 }
 
 .checkbox-label input {
     margin-right: 10px;
+
 }
 
 .conversation-name-input {
-    width: 100%;
+    /*width: 100%;*/
     padding: 10px;
     margin-bottom: 10px;
+    width: 500px;
 }
 
 .user-list {
@@ -50,6 +65,7 @@
 
 .user-item {
     margin-bottom: 5px;
+    color: white;
 }
 
 .modal-buttons {
@@ -57,7 +73,7 @@
     justify-content: flex-end;
 }
 
-.create-button {
+.modal-create-button {
     background-color: #0069d9;
     color: #fff;
     border: none;
@@ -70,7 +86,7 @@
     background-color: #005bb5;
 }
 
-.cancel-button {
+.modal-cancel-button {
     background-color: #ff8c00;
     color: #fff;
     border: none;

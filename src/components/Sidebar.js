@@ -68,8 +68,9 @@ const Sidebar = () => {
     return (
         <div className="sidebar-container">
             {/* Przyciski "Plan lekcji" i "Zadania" */}
-            <button className="sidebar-button" onClick={() => navigate(`/task`)}>Zadania</button>
+            <button className="sidebar-button" onClick={() => navigate('/chat')}>Wiadomości</button>
             <button className="sidebar-button" onClick={() => navigate('/schedule')}>Plan zajęć</button>
+            <button className="sidebar-button" onClick={() => navigate(`/task`)}>Zadania</button>
             <h2>Moje grupy</h2>
 
             {/* Ścieżka grupy */}

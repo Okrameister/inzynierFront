@@ -30,7 +30,7 @@ function App() {
                         <Route path="/create-post" element={<CreatePost />} />
                         <Route path="/post/:postId/comments" element={<Comments />} />
                         <Route path="/schedule" element={<ScheduleGrid />} />
-                        <Route path="/chat/:conversationId" element={<Chat />} />
+                        <Route path="/chat" element={<Chat />} />
                         <Route path="/task" element={<Task />} />
                     </Routes>
                 </div>

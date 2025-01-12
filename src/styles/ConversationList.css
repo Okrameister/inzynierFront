@@ -1,6 +1,8 @@
 /* ConversationList.css */
 
 .conversation-list {
+    margin: 10px;
+    width: 100%;
     overflow-y: auto;
     flex: 1;
 }
@@ -9,6 +11,7 @@
     padding: 15px;
     border-bottom: 1px solid #eee;
     cursor: pointer;
+
 }
 
 .conversation-item:hover {

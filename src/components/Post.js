@@ -36,12 +36,12 @@ const Post = ({ post, onPostUpdated }) => {
         By: {post.user ? `${post.user.firstName} ${post.user.lastName}` : 'Anonimowy użytkownik'}
     </span>
             </div>
-
+            {post.content && <p className="post-content">{post.content}</p>}
             {post.image && <img src={post.image} alt="Obrazek posta" className="post-image" />}
             {post.video && <video src={post.video} controls className="post-video" />}
 
             {/* Nowa sekcja dla treści posta */}
-            {post.content && <p className="post-content">{post.content}</p>}
+
 
             <p className="post-likes">Polubienia: {post.liked.length}</p>
 

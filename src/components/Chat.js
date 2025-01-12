@@ -35,7 +35,7 @@ const Chat = () => {
 
     return (
         <div className="chat-container">
-            <div className="sidebar">
+            <div className="chat-sidebar">
                 <button className="new-conversation-button" onClick={() => setShowNewConversationModal(true)}>
                     Nowa konwersacja
                 </button>

@@ -33,16 +33,16 @@ const Header = () => {
                         alt="Student Link Logo"
                         className="header-logo-image"
                         onClick={handleHomeClick}
-                        style={{ cursor: 'pointer' }} // Ustawienie kursora na klikalny
+                        style={{ cursor: 'pointer' }}
                     />
                 </div>
                 {isLogged && (
                     <>
                         <button className="header-profile-button" onClick={handleProfile}>
-                            <FontAwesomeIcon icon={faUser} /> My Profile
+                            <FontAwesomeIcon icon={faUser} /> Mój Profil
                         </button>
                         <button className="header-logout-button" onClick={handleLogout}>
-                            Logout
+                            Wyloguj
                         </button>
                     </>
                 )}

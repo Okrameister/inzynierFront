@@ -1,24 +1,23 @@
-// MessageList.jsx
 import React, { useEffect, useState, useRef } from 'react';
 import '../styles/MessageList.css'; // Import pliku CSS
-
 
 const MessageList = ({ conversation, token }) => {
     const [messages, setMessages] = useState([]);
     const [content, setContent] = useState('');
-    const messagesEndRef = useRef(null);
-
     const [currentUser, setCurrentUser] = useState(null);
 
+    // Zamiast ref-a do "messagesEndRef" korzystamy z ref-a do całego kontenera wiadomości:
+    const messageListRef = useRef(null);
+
     useEffect(() => {
-      fetch('/api/users/profile', {
-        headers: {
-          'Authorization': 'Bearer ' + token
-        }
-      })
-        .then(response => response.json())
-        .then(user => setCurrentUser(user))
-        .catch(error => console.error('Błąd podczas pobierania profilu użytkownika:', error));
+        fetch('/api/users/profile', {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+            .then(response => response.json())
+            .then(user => setCurrentUser(user))
+            .catch(error => console.error('Błąd podczas pobierania profilu użytkownika:', error));
     }, [token]);
 
     useEffect(() => {
@@ -30,7 +29,7 @@ const MessageList = ({ conversation, token }) => {
             .then(response => response.json())
             .then(data => {
                 setMessages(data);
-                scrollToBottom();
+                scrollToBottom(); // Przewiń na dół po załadowaniu
             })
             .catch(error => console.error('Błąd podczas pobierania wiadomości:', error));
     }, [conversation.id, token]);
@@ -48,9 +47,9 @@ const MessageList = ({ conversation, token }) => {
         })
             .then(response => response.json())
             .then(message => {
-                setMessages([...messages, message]);
+                setMessages(prevMessages => [...prevMessages, message]);
                 setContent('');
-                scrollToBottom();
+                scrollToBottom(); // Przewiń na dół po wysłaniu
             })
             .catch(error => console.error('Błąd podczas wysyłania wiadomości:', error));
     };
@@ -61,8 +60,16 @@ const MessageList = ({ conversation, token }) => {
         }
     };
 
+    // Funkcja przewijająca do dołu WYŁĄCZNIE w kontenerze wiadomości
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        if (messageListRef.current) {
+            // Możesz wybrać płynne przewijanie:
+            messageListRef.current.scrollTo({
+                top: messageListRef.current.scrollHeight+25,
+                behavior: 'smooth'
+            });
+
+        }
     };
 
     if (!currentUser) {
@@ -74,7 +81,7 @@ const MessageList = ({ conversation, token }) => {
             <div className="message-list-header">
                 <h3>{conversation.name || 'Konwersacja'}</h3>
             </div>
-            <div className="message-list">
+            <div className="message-list" ref={messageListRef}>
                 {messages.map(message => {
                     const isOwnMessage = message.sender.id === currentUser.id;
                     return (
@@ -87,8 +94,8 @@ const MessageList = ({ conversation, token }) => {
                         </div>
                     );
                 })}
-                <div ref={messagesEndRef} />
             </div>
+
             <div className="message-input-container">
                 <input
                     type="text"
