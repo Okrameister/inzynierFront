@@ -85,3 +85,8 @@
 .admin-section p {
     color: #555;
 }
+
+.admin-users-list{
+    list-style: none;
+    padding: 0;
+}

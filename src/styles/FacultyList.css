@@ -1,0 +1,87 @@
+.faculty-list-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1160px;
+
+}
+
+.faculty-list-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff8c00; /* Pomarańczowy akcent dla nagłówka */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faculty-list-container h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faculty-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.faculty-card {
+    text-decoration: none; /* Usunięcie podkreślenia */
+    color: inherit; /* Utrzymanie koloru tekstu */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.faculty-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.faculty-content {
+    padding: 16px;
+}
+
+.faculty-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.faculty-content p {
+    margin-bottom: 16px;
+    color: #555;
+}
+
+.faculty-details-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faculty-card:hover h3 {
+    color: #ff8c00; /* Zmiana koloru tytułu na pomarańczowy przy najechaniu */
+}

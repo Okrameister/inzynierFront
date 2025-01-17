@@ -1,0 +1,140 @@
+/* Główne kontener strony */
+.faculty-details-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    min-height: 100vh;
+    max-width: 1160px;
+}
+
+/* Nagłówek */
+.faculty-details-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff8c00; /* Pomarańczowy akcent */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Główna zawartość */
+.faculty-details-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    overflow-x: hidden; /* Dodatkowe zabezpieczenie przed przewijaniem */
+}
+
+/* Obraz wydziału */
+.faculty-details-image {
+    width: 300px; /* Stała szerokość obrazu */
+    height: 200px; /* Stała wysokość obrazu */
+    object-fit: cover; /* Dopasowanie obrazu bez zniekształceń */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Delikatny cień */
+    border: 1px solid #ddd; /* Subtelna ramka */
+}
+
+/* Opis wydziału */
+.faculty-details-description {
+    flex: 1;
+}
+
+.faculty-details-description h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.faculty-details-description p {
+    font-size: 18px; /* Powiększona czcionka */
+    line-height: 1.8; /* Większe odstępy między liniami dla lepszej czytelności */
+    color: #555;
+    text-align: justify; /* Wyrównanie tekstu do obu krawędzi */
+}
+
+/* Lista kursów */
+.faculty-courses {
+    margin-top: 20px;
+}
+
+.faculty-courses h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faculty-courses ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.faculty-courses ul li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.admin-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.admin-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-actions button:hover {
+    background-color: #0056b3;
+}
+
+.admin-actions button:last-child {
+    background-color: #ff4d4d;
+}
+
+.admin-actions button:last-child:hover {
+    background-color: #cc0000;
+}
+
+.faculty-edit-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.faculty-edit-form input,
+.faculty-edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.faculty-edit-form button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.faculty-edit-form button:hover {
+    background-color: #0056b3;
+}
+

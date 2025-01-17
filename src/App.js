@@ -11,6 +11,8 @@ import Task from './components/Task';
 import ScheduleGrid from "./components/ScheduleGrid";
 import Sidebar from "./components/Sidebar";
 import AdminPanel from "./components/AdminPanel";
+import FacultyList from './components/FacultyList';
+import FacultyDetails from './components/FacultyDetails';
 import './App.css';
 
 const isLogged = localStorage.getItem('isLogged');
@@ -33,6 +35,8 @@ function App() {
                         <Route path="/chat" element={<Chat />} />
                         <Route path="/task" element={<Task />} />
                         <Route path="/adminPanel" element={<AdminPanel />} />
+                        <Route path="/faculties" element={<FacultyList />} />
+                        <Route path="/faculty/:id" element={<FacultyDetails />} />
                     </Routes>
                 </div>
             </div>

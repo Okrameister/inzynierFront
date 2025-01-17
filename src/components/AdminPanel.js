@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/AdminPanel.css';
 
 const AdminPanel = () => {
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem('token'); // Pobierz token z localStorage lub innego źródła
+        const token = localStorage.getItem('token'); // Pobierz token z localStorage
 
         fetch('/api/users', {
             headers: {
@@ -22,7 +24,9 @@ const AdminPanel = () => {
             .catch(error => console.error('Error fetching users:', error));
     }, []);
 
-
+    const handleUserClick = (userId) => {
+        navigate(`/profile/${userId}`);
+    };
 
     return (
         <div className="admin-container">
@@ -30,9 +34,16 @@ const AdminPanel = () => {
             <div className="admin-sections">
                 <div className="admin-section">
                     <h2>Użytkownicy</h2>
-                    <ul>
+                    <ul className="admin-users-list">
                         {users.map(user => (
-                            <li key={user.id}>{`${user.firstName} ${user.lastName}`} </li>
+                            <li
+                                key={user.id}
+                                className="admin-user-item"
+                                onClick={() => handleUserClick(user.id)}
+                                style={{ cursor: 'pointer'}}
+                            >
+                                {`${user.firstName} ${user.lastName}`}
+                            </li>
                         ))}
                     </ul>
                 </div>
