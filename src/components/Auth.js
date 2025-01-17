@@ -13,6 +13,7 @@ function Auth({ isLoginDefault = true }) {
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [userRole, setUserRole] = useState("");
 
     useEffect(() => {
         setIsSignup(!isLoginDefault);
@@ -26,36 +27,74 @@ function Auth({ isLoginDefault = true }) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         setSuccess('');
 
         const endpoint = isSignup ? '/auth/signup' : '/auth/signin';
 
-        axios.post(endpoint, formData)
-            .then(response => {
-                const data = response.data;
-                setSuccess(isSignup ? 'Registration successful!' : 'Login successful!');
-                if (!isSignup) {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('isLogged', true);
-                }
-                setFormData({
-                    email: '',
-                    password: '',
-                    firstName: '',
-                    lastName: '',
-                    gender: 'Mężczyzna'
-                });
-                if(isSignup){
-                    window.location.href = '/auth';
-                }else window.location.href = '/';
-            })
-            .catch(error => {
-                setError('An error occurred. Please check your details and try again.');
+        try {
+            const response = await axios.post(endpoint, formData);
+            const data = response.data;
+            setSuccess(isSignup ? 'Registration successful!' : 'Login successful!');
+
+            if (!isSignup) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('isLogged', true);
+
+                // Poczekaj na pobranie roli użytkownika
+                const role = await fetchUserRole();
+                localStorage.setItem('role', role);
+                setUserRole(role);  // Ustawiamy stan
+            }
+
+            setFormData({
+                email: '',
+                password: '',
+                firstName: '',
+                lastName: '',
+                gender: 'Mężczyzna'
             });
+
+            window.location.href = isSignup ? '/auth' : '/';
+
+        } catch (error) {
+            setError('An error occurred. Please check your details and try again.');
+        }
     };
+
+    const fetchUserRole = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                console.error("Brak tokena JWT");
+                return "";
+            }
+
+            const response = await fetch("/api/users/role", {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error("Błąd podczas pobierania roli użytkownika");
+            }
+
+            const role = await response.text();  // Pobieramy rolę jako tekst
+            return role; // Zwracamy ją do funkcji wywołującej
+
+        } catch (error) {
+            console.error("Wystąpił błąd:", error);
+            return "";
+        }
+    };
+
+
+
 
     return (
         <div className="auth-container">

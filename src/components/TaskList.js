@@ -14,7 +14,6 @@ const TaskList = ({ onSelectTask, token }) => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Otrzymane dane z /api/tasks:', data);
                 setTasks(data);
             })
             .catch(error => console.error('Błąd podczas pobierania zadań:', error));

@@ -74,11 +74,26 @@ body {
     padding-top: 170px;
 }
 
-.group-name {
+.header-admin-button {
     position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #007bff;
+    right: 260px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
 }
+
+.header-admin-button:hover {
+    background-color: #c82333;
+}
+
+
+
+

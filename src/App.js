@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import Auth from './components/Auth';
 import Profile from './components/Profile';
-import PostList from './components/PostList';
 import CreatePost from './components/PostForm';
 import Comments from './components/Comments';
 import HomePage from './components/HomePage';
@@ -11,6 +10,7 @@ import Chat from './components/Chat';
 import Task from './components/Task';
 import ScheduleGrid from "./components/ScheduleGrid";
 import Sidebar from "./components/Sidebar";
+import AdminPanel from "./components/AdminPanel";
 import './App.css';
 
 const isLogged = localStorage.getItem('isLogged');
@@ -27,11 +27,12 @@ function App() {
                         <Route path="/" element={<HomePage/>} />
                         <Route path="/auth" element={<Auth />} />
                         <Route path="/profile" element={<Profile />} />
+                        <Route path="/profile/:userId" element={<Profile />} />
                         <Route path="/create-post" element={<CreatePost />} />
-                        <Route path="/post/:postId/comments" element={<Comments />} />
                         <Route path="/schedule" element={<ScheduleGrid />} />
                         <Route path="/chat" element={<Chat />} />
                         <Route path="/task" element={<Task />} />
+                        <Route path="/adminPanel" element={<AdminPanel />} />
                     </Routes>
                 </div>
             </div>

@@ -11,10 +11,12 @@
     align-items: center;
     padding: 20px;
     min-height: 100vh;
+    max-width: 200px;
 }
 
 .main-content{
     padding-left: 10px;
     padding-top: 20px;
     width: 100%;
+
 }

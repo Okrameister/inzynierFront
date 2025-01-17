@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEdit, faSave, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Profile.css';
 
 const Profile = () => {
+    const { userId } = useParams();
+
     const [user, setUser] = useState(null);
+    const [currentUserId, setCurrentUserId] = useState(null); // Identyfikator zalogowanego użytkownika
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({
         firstName: '',
@@ -14,39 +17,44 @@ const Profile = () => {
         email: '',
         gender: '',
     });
-    const navigate = useNavigate();
 
     useEffect(() => {
-        // Sprawdzenie, czy token jest dostępny
         const token = localStorage.getItem('token');
-        if (!token) {
-            console.error('Brak tokenu. Użytkownik nie jest zalogowany.');
-            navigate('/login');
-            return;
-        }
 
-        // Pobranie danych użytkownika po załadowaniu komponentu
         const fetchUserData = async () => {
             try {
-                const response = await axios.get('/api/users/profile', {
+                // Pobieranie danych zalogowanego użytkownika
+                const profileResponse = await axios.get('/api/users/profile', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setUser(response.data);
+
+                setCurrentUserId(profileResponse.data.id); // Ustawienie ID zalogowanego użytkownika
+
+                // Pobieranie danych użytkownika na podstawie userId
+                const userResponse = userId
+                    ? await axios.get(`/api/users/profile/${userId}`, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    })
+                    : profileResponse; // Jeśli brak userId, użyj danych z zalogowanego użytkownika
+
+                setUser(userResponse.data);
                 setFormData({
-                    firstName: response.data.firstName,
-                    lastName: response.data.lastName,
-                    email: response.data.email,
-                    gender: response.data.gender,
+                    firstName: userResponse.data.firstName,
+                    lastName: userResponse.data.lastName,
+                    email: userResponse.data.email,
+                    gender: userResponse.data.gender,
                 });
             } catch (error) {
                 console.error('Błąd podczas pobierania danych użytkownika:', error);
-                navigate('/login');
             }
         };
+
         fetchUserData();
-    }, [navigate]);
+    }, [userId]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -73,11 +81,6 @@ const Profile = () => {
     const handleSaveClick = async () => {
         try {
             const token = localStorage.getItem('token');
-            if (!token) {
-                console.error('Brak tokenu. Użytkownik nie jest zalogowany.');
-                navigate('/login');
-                return;
-            }
             const response = await axios.put('/api/users', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -91,8 +94,10 @@ const Profile = () => {
     };
 
     if (!user) {
-        return <p></p>;
+        return <p>Ładowanie...</p>;
     }
+
+    const isOwnProfile = currentUserId === user.id;
 
     return (
         <div className="user-profile">
@@ -156,9 +161,11 @@ const Profile = () => {
                     <p><strong>Nazwisko:</strong> {user.lastName}</p>
                     <p><strong>Email:</strong> {user.email}</p>
                     <p><strong>Płeć:</strong> {user.gender}</p>
-                    <button onClick={handleEditClick} className="edit-button">
-                        <FontAwesomeIcon icon={faEdit} /> Edytuj
-                    </button>
+                    {isOwnProfile && (
+                        <button onClick={handleEditClick} className="edit-button">
+                            <FontAwesomeIcon icon={faEdit} /> Edytuj
+                        </button>
+                    )}
                 </div>
             )}
         </div>

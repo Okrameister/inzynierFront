@@ -17,6 +17,10 @@ const Header = () => {
         navigate('/profile');
     };
 
+    const handleAdmin = () => {
+        navigate('/adminPanel');
+    };
+
     const handleHomeClick = () => {
         localStorage.setItem("groupId", "0");
         window.location.href = '/';
@@ -38,6 +42,9 @@ const Header = () => {
                 </div>
                 {isLogged && (
                     <>
+                        <button className="header-admin-button" onClick={handleAdmin}>
+                            <FontAwesomeIcon icon={faUser} /> Admin panel
+                        </button>
                         <button className="header-profile-button" onClick={handleProfile}>
                             <FontAwesomeIcon icon={faUser} /> Mój Profil
                         </button>

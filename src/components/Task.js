@@ -8,7 +8,6 @@ import '../styles/Task.css'; // Importowanie stylów CSS
 const Task = () => {
     const [selectedTask, setSelectedTask] = useState(null);
     const token = localStorage.getItem('token'); // Pobieramy token z localStorage
-
     const handleTaskCreated = (task) => {
         setSelectedTask(task);
     };
