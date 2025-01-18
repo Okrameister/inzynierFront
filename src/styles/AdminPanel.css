@@ -6,6 +6,7 @@
     margin: 10px 10px 10px 0;
     width: 100%;
     min-height: 100vh;
+    max-width: 1320px;
 }
 
 .admin-header {
@@ -73,12 +74,17 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     flex: 1;
-    max-width: 300px;
-    text-align: center;
+    min-height: 100vw;
 }
 
-.admin-section h2 {
-    margin-bottom: 10px;
+.admin-section-users{
+    width: 30%;
+
+}
+
+.admin-section-users h2 {
+    font-size: 24px;
+    margin-bottom: 1em;
     color: #007bff;
 }
 
@@ -89,4 +95,7 @@
 .admin-users-list{
     list-style: none;
     padding: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }

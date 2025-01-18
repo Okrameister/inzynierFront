@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-
 import Auth from './components/Auth';
 import Profile from './components/Profile';
 import CreatePost from './components/PostForm';
-import Comments from './components/Comments';
 import HomePage from './components/HomePage';
 import Header from './components/Header';
 import Chat from './components/Chat';
@@ -13,6 +12,8 @@ import Sidebar from "./components/Sidebar";
 import AdminPanel from "./components/AdminPanel";
 import FacultyList from './components/FacultyList';
 import FacultyDetails from './components/FacultyDetails';
+import NewsList from './components/NewsList';
+import NewsForm from './components/NewsForm';
 import './App.css';
 
 const isLogged = localStorage.getItem('isLogged');
@@ -37,6 +38,8 @@ function App() {
                         <Route path="/adminPanel" element={<AdminPanel />} />
                         <Route path="/faculties" element={<FacultyList />} />
                         <Route path="/faculty/:id" element={<FacultyDetails />} />
+                        <Route path="/news" element={<NewsList />} />
+                        <Route path="/create-news" element={<NewsForm />} />
                     </Routes>
                 </div>
             </div>

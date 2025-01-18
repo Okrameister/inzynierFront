@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import GroupCreator from './GroupCreator';
 import '../styles/AdminPanel.css';
+
 
 const AdminPanel = () => {
     const [users, setUsers] = useState([]);
@@ -32,7 +34,7 @@ const AdminPanel = () => {
         <div className="admin-container">
             <h1>Panel Administratora</h1>
             <div className="admin-sections">
-                <div className="admin-section">
+                <div className="admin-section-users">
                     <h2>Użytkownicy</h2>
                     <ul className="admin-users-list">
                         {users.map(user => (
@@ -47,14 +49,10 @@ const AdminPanel = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="admin-section">
-                    <h2>Grupy</h2>
-                    <p>Zarządzaj grupami.</p>
+                <div className="admin-section groups">
+                    <GroupCreator></GroupCreator>
                 </div>
-                <div className="admin-section">
-                    <h2>Zadania</h2>
-                    <p>Zarządzaj zadaniami.</p>
-                </div>
+
             </div>
         </div>
     );

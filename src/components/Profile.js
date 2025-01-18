@@ -98,6 +98,7 @@ const Profile = () => {
     }
 
     const isOwnProfile = currentUserId === user.id;
+    const role = localStorage.getItem('role');
 
     return (
         <div className="user-profile">
@@ -161,7 +162,7 @@ const Profile = () => {
                     <p><strong>Nazwisko:</strong> {user.lastName}</p>
                     <p><strong>Email:</strong> {user.email}</p>
                     <p><strong>Płeć:</strong> {user.gender}</p>
-                    {isOwnProfile && (
+                    {(isOwnProfile || role==="ADMIN") && (
                         <button onClick={handleEditClick} className="edit-button">
                             <FontAwesomeIcon icon={faEdit} /> Edytuj
                         </button>
