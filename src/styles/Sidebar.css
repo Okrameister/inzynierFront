@@ -1,14 +1,15 @@
-
-
 h2 {
     margin-bottom: 10px;
     font-size: 20px;
     text-align: center;
+    color: #333;
 }
 
+.dark-mode h2 {
+    color: #ccc;
+}
 
 .breadcrumb-container {
-
     font-size: 14px;
     margin-bottom: 15px;
     color: #333;
@@ -17,24 +18,30 @@ h2 {
     justify-content: center;
 }
 
+.dark-mode .breadcrumb-container {
+    color: #ccc;
+}
+
 .breadcrumb-item {
     cursor: pointer;
     font-weight: bold;
     color: #007bff;
 }
 
+.dark-mode .breadcrumb-item {
+    color: #4facff;
+}
+
 .breadcrumb-item:hover {
     text-decoration: underline;
 }
 
-
-.sidebar-container{
+.sidebar-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Styl dla przycisków "Zadania" i "Plan zajęć" - BEZ ZMIAN */
 .sidebar-button {
     margin: 8px;
     height: 40px;
@@ -49,10 +56,19 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
+.dark-mode .sidebar-button {
+    background-color: rgba(50, 50, 50, 255);
+    color: #ccc;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
 .sidebar-button:hover {
     background-color: rgba(195, 197, 199, 255);
 }
 
+.dark-mode .sidebar-button:hover {
+    background-color: rgba(70, 70, 70, 255);
+}
 
 .group-buttons {
     display: flex;
@@ -71,7 +87,18 @@ h2 {
     color: black;
     font-weight: bold;
 }
+
+.dark-mode .group-button {
+    background-color: #2e2e2e;
+    color: #ccc;
+}
+
 .group-button:hover {
-  color: #007bff;
-  text-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+    color: #007bff;
+    text-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+.dark-mode .group-button:hover {
+    color: #4facff;
+    text-shadow: 0px 0px 8px rgba(79, 172, 255, 0.5);
 }

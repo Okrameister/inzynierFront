@@ -1,15 +1,28 @@
-/* TaskDetails.css */
-
 .task-details h2 {
     margin-top: 0;
+    color: #333;
+}
+
+.dark-mode .task-details h2 {
+    color: #ccc;
 }
 
 .task-details p {
     font-size: 16px;
+    color: #333;
+}
+
+.dark-mode .task-details p {
+    color: #ccc;
 }
 
 .task-details h3 {
     margin-top: 20px;
+    color: #333;
+}
+
+.dark-mode .task-details h3 {
+    color: #ccc;
 }
 
 .task-details ul {
@@ -20,6 +33,14 @@
 .task-details li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.dark-mode .task-details li {
+    border-bottom: 1px solid #555;
+    background-color: #2e2e2e;
+    color: #ccc;
 }
 
 .task-details li button {
@@ -31,12 +52,25 @@
     cursor: pointer;
 }
 
+.dark-mode .task-details li button {
+    background-color: #005bb5;
+}
+
 .task-details li button:hover {
     background-color: #005bb5;
 }
 
+.dark-mode .task-details li button:hover {
+    background-color: #004a99;
+}
+
 .task-details input[type="file"] {
     margin-bottom: 10px;
+    color: #333;
+}
+
+.dark-mode .task-details input[type="file"] {
+    color: #ccc;
 }
 
 .task-details button {
@@ -47,6 +81,14 @@
     cursor: pointer;
 }
 
+.dark-mode .task-details button {
+    background-color: #ff4500;
+}
+
 .task-details button:hover {
     background-color: #e07a00;
+}
+
+.dark-mode .task-details button:hover {
+    background-color: #ff6347;
 }

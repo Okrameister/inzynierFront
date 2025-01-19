@@ -1,12 +1,24 @@
-/* CreateTaskForm.css */
-
 .create-task-form {
     max-width: 600px;
     margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .create-task-form {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .create-task-form h2 {
     margin-top: 0;
+    color: #333;
+}
+
+.dark-mode .create-task-form h2 {
+    color: #f0f0f0;
 }
 
 .create-task-form input,
@@ -14,6 +26,17 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.dark-mode .create-task-form input,
+.dark-mode .create-task-form textarea {
+    border: 1px solid #555;
+    background-color: #2e2e2e;
+    color: #ccc;
 }
 
 .create-task-form button {
@@ -22,8 +45,18 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .create-task-form button {
+    background-color: #ff4500;
 }
 
 .create-task-form button:hover {
     background-color: #e07a00;
+}
+
+.dark-mode .create-task-form button:hover {
+    background-color: #ff6347;
 }

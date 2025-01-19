@@ -7,9 +7,19 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .news-form {
+    background: #1e1e1e;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
 .news-form h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
+}
+
+.dark-mode .news-form h2 {
+    color: #ccc;
 }
 
 .form-group {
@@ -20,6 +30,11 @@
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #333;
+}
+
+.dark-mode .form-group label {
+    color: #ccc;
 }
 
 .form-group input,
@@ -29,6 +44,15 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    border: 1px solid #555;
+    background-color: #2e2e2e;
+    color: #ccc;
 }
 
 .form-group textarea {
@@ -46,6 +70,14 @@
     cursor: pointer;
 }
 
+.dark-mode .news-form-button {
+    background: #005bb5;
+}
+
 .news-form-button:hover {
     background: #0056b3;
+}
+
+.dark-mode .news-form-button:hover {
+    background: #004a99;
 }

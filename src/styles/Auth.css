@@ -1,15 +1,19 @@
-/* Auth.css */
 .auth-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Jasne tło */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+}
+
+.dark-mode .auth-container {
+    background-color: #1e1e1e; /* Ciemne tło */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .auth-form {
@@ -27,10 +31,18 @@
     margin: 10px 0;
     border: none;
     border-radius: 20px;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Jasne tło dla pól */
     outline: none;
     box-sizing: border-box;
     font-size: 16px;
+    color: #333; /* Kolor tekstu */
+}
+
+.dark-mode .auth-form input[type="text"],
+.dark-mode .auth-form input[type="email"],
+.dark-mode .auth-form input[type="password"] {
+    background-color: #333; /* Ciemne tło dla pól */
+    color: #f0f0f0; /* Jasny tekst */
 }
 
 .button-container {
@@ -45,7 +57,7 @@
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
-    background-color: #ff8c00;
+    background-color: #ff8c00; /* Pomarańczowy */
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -53,8 +65,16 @@
     max-width: 200px;
 }
 
+.dark-mode .auth-submit-button {
+    background-color: #ff4500; /* Ciemniejszy pomarańczowy */
+}
+
 .auth-submit-button:hover {
     background-color: #ff7a00;
+}
+
+.dark-mode .auth-submit-button:hover {
+    background-color: #ff6347; /* Jaśniejszy pomarańczowy */
 }
 
 .toggle-form-button {
@@ -67,10 +87,17 @@
     text-decoration: underline;
 }
 
-/* Remove hover effect for toggle button */
+.dark-mode .toggle-form-button {
+    color: #ff6347; /* Jaśniejszy akcentowy pomarańczowy */
+}
+
 .no-hover-effect:hover {
     background: none;
     color: #ff8c00;
+}
+
+.dark-mode .no-hover-effect:hover {
+    color: #ff6347;
 }
 
 .error-message {
@@ -78,8 +105,22 @@
     margin-bottom: 10px;
 }
 
+.dark-mode .error-message {
+    color: #ff6b6b; /* Jaśniejszy czerwony */
+}
+
 .success-message {
     color: green;
     margin-bottom: 10px;
 }
 
+.dark-mode .success-message {
+    color: #32cd32; /* Jaśniejszy zielony */
+}
+.gender-selection {
+    color: #000000; /* Czarny tekst w trybie dziennym */
+}
+
+.dark-mode .gender-selection {
+    color: #f0f0f0; /* Jasny tekst w trybie nocnym */
+}

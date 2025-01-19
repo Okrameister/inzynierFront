@@ -1,7 +1,19 @@
-.routerView{
+.routerView {
     display: flex;
+    background-color: #f7f7f7;
+    color: #333;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    margin-top: -30px;
 }
-.sidebar{
+
+.dark-mode .routerView {
+    background-color: #1e1e1e;
+    color: #ccc;
+}
+
+.sidebar {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -14,9 +26,18 @@
     max-width: 200px;
 }
 
-.main-content{
+.dark-mode .sidebar {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
     padding-left: 10px;
     padding-top: 20px;
     width: 100%;
+    color: #333;
+}
 
+.dark-mode .main-content {
+    color: #ccc;
 }

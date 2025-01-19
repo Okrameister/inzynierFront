@@ -49,7 +49,7 @@ const AdminPanel = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="admin-section groups">
+                <div className="admin-section-groups">
                     <GroupCreator></GroupCreator>
                 </div>
 

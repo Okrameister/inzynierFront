@@ -1,9 +1,7 @@
-/* MessageList.css */
-
 .message-list-container {
   display: flex;
   flex-direction: column;
-  height:70%;
+  height: 70%;
   width: 100%;
 }
 
@@ -11,6 +9,11 @@
   padding: 15px;
   background-color: #0069d9;
   color: #fff;
+}
+
+.dark-mode .message-list-header {
+  background-color: #004a99;
+  color: #e0e0e0;
 }
 
 .message-list-header h3 {
@@ -22,6 +25,10 @@
   padding: 15px;
   overflow-y: auto;
   background-color: #f7f7f7;
+}
+
+.dark-mode .message-list {
+  background-color: #1e1e1e;
 }
 
 .message-item {
@@ -43,6 +50,11 @@
   max-width: 60%;
 }
 
+.dark-mode .own-message .message-content {
+  background-color: #005bb5;
+  color: #e0e0e0;
+}
+
 /* Styl dla wiadomości innych użytkowników */
 .other-message {
   justify-content: flex-start;
@@ -56,10 +68,19 @@
   max-width: 60%;
 }
 
+.dark-mode .other-message .message-content {
+  background-color: #2e2e2e;
+  color: #ccc;
+}
+
 .message-sender {
   font-weight: bold;
   margin-right: 5px;
   color: #0069d9;
+}
+
+.dark-mode .message-sender {
+  color: #4facff;
 }
 
 .message-input-container {
@@ -68,10 +89,22 @@
   border-top: 1px solid #ddd;
 }
 
+.dark-mode .message-input-container {
+  border-top: 1px solid #555;
+}
+
 .message-input {
   flex: 1;
   padding: 10px;
   font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.dark-mode .message-input {
+  border: 1px solid #555;
+  background-color: #2e2e2e;
+  color: #ccc;
 }
 
 .send-button {
@@ -82,6 +115,14 @@
   cursor: pointer;
 }
 
+.dark-mode .send-button {
+  background-color: #ff4500;
+}
+
 .send-button:hover {
   background-color: #e07a00;
+}
+
+.dark-mode .send-button:hover {
+  background-color: #ff6347;
 }

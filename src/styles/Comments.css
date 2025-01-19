@@ -1,14 +1,13 @@
-/* Comments.css */
-
-.comments-container {
-    border-radius: 10px;
-}
 
 .comments-title {
     font-size: 22px;
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
+}
+
+.dark-mode .comments-title {
+    color: #f0f0f0;
 }
 
 .comments-list {
@@ -27,8 +26,18 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
+.dark-mode .comment-item {
+    background-color: #2e2e2e;
+    border: 1px solid #555;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
 .comment-item:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .comment-item:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .comment-author {
@@ -39,10 +48,18 @@
     cursor: pointer;
 }
 
+.dark-mode .comment-author {
+    color: #ccc;
+}
+
 .comment-content {
     font-size: 14px;
     color: #333;
     margin-bottom: 10px;
+}
+
+.dark-mode .comment-content {
+    color: #ddd;
 }
 
 .comment-likes-container {
@@ -56,6 +73,10 @@
     margin-right: 10px;
 }
 
+.dark-mode .comment-likes {
+    color: #ccc;
+}
+
 .comment-like-button {
     padding: 5px 10px;
     border: none;
@@ -66,8 +87,16 @@
     transition: background-color 0.3s ease;
 }
 
+.dark-mode .comment-like-button {
+    background-color: #ff4500;
+}
+
 .comment-like-button:hover {
     background-color: #ff7a00;
+}
+
+.dark-mode .comment-like-button:hover {
+    background-color: #ff6347;
 }
 
 .add-comment-form {
@@ -75,13 +104,21 @@
 }
 
 .new-comment-textarea {
-    max-width: calc(100% - 20px); /* Matches the width of comment-item considering padding */
+    max-width: calc(100% - 20px);
     width: 100%;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ddd;
     font-size: 16px;
     resize: vertical;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-mode .new-comment-textarea {
+    background-color: #2e2e2e;
+    border: 1px solid #555;
+    color: #ccc;
 }
 
 .add-comment-button {
@@ -95,8 +132,16 @@
     transition: background-color 0.3s ease;
 }
 
+.dark-mode .add-comment-button {
+    background-color: #ff4500;
+}
+
 .add-comment-button:hover {
     background-color: #ff7a00;
+}
+
+.dark-mode .add-comment-button:hover {
+    background-color: #ff6347;
 }
 
 .comment-delete-button {
@@ -109,6 +154,14 @@
     transition: color 0.3s ease;
 }
 
+.dark-mode .comment-delete-button {
+    color: #ff6b6b;
+}
+
 .comment-delete-button:hover {
     color: #cc0000;
+}
+
+.dark-mode .comment-delete-button:hover {
+    color: #ff4d4d;
 }

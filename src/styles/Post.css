@@ -11,16 +11,28 @@
     margin-right: 10px;
 }
 
+.dark-mode .post-caption {
+    color: #ccc;
+}
+
 .post-author {
     font-size: 16px;
     color: #666;
     cursor: pointer;
 }
 
+.dark-mode .post-author {
+    color: #aaa;
+}
+
 .post-likes {
     font-size: 14px;
     color: #ff8c00;
     margin-bottom: 10px;
+}
+
+.dark-mode .post-likes {
+    color: #ffa733;
 }
 
 .post-like-icon {
@@ -31,8 +43,16 @@
     margin-bottom: 15px;
 }
 
+.dark-mode .post-like-icon {
+    color: #ffa733;
+}
+
 .post-like-icon:hover {
     color: #ff7a00;
+}
+
+.dark-mode .post-like-icon:hover {
+    color: #ff6347;
 }
 
 .post-image,
@@ -41,9 +61,14 @@
     height: auto;
     margin-bottom: 15px;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Nowy styl dla treści posta */
+.dark-mode .post-image,
+.dark-mode .post-video {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
 .post-content {
     font-size: 16px;
     color: #444;
@@ -52,4 +77,9 @@
     background: #f8f8f8;
     padding: 10px;
     border-radius: 5px;
+}
+
+.dark-mode .post-content {
+    color: #ccc;
+    background: #2e2e2e;
 }

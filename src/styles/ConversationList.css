@@ -1,25 +1,41 @@
-/* ConversationList.css */
-
 .conversation-list {
     margin: 10px;
     width: 100%;
     overflow-y: auto;
     flex: 1;
+    background-color: #ffffff;
+}
+
+.dark-mode .conversation-list {
+    background-color: #1e1e1e;
 }
 
 .conversation-item {
     padding: 15px;
     border-bottom: 1px solid #eee;
     cursor: pointer;
+    color: #333;
+}
 
+.dark-mode .conversation-item {
+    border-bottom: 1px solid #555;
+    color: #ccc;
 }
 
 .conversation-item:hover {
     background-color: #f0f0f0;
 }
 
+.dark-mode .conversation-item:hover {
+    background-color: #333;
+}
+
 .conversation-item.active {
     background-color: #e6f0ff;
+}
+
+.dark-mode .conversation-item.active {
+    background-color: #335577;
 }
 
 .conversation-name {
@@ -28,8 +44,16 @@
     color: #0069d9;
 }
 
+.dark-mode .conversation-name {
+    color: #4facff;
+}
+
 .conversation-last-message {
     margin: 5px 0 0;
     color: #555;
     font-size: 14px;
+}
+
+.dark-mode .conversation-last-message {
+    color: #ccc;
 }

@@ -10,12 +10,30 @@
     text-align: center;
 }
 
+.dark-mode .schedule-grid th,
+.dark-mode .schedule-grid td {
+    border: 1px solid #555;
+}
+
 .schedule-grid th {
     background-color: #f2f2f2;
+    color: #333;
+}
+
+.dark-mode .schedule-grid th {
+    background-color: #3a3a3a;
+    color: #ccc;
 }
 
 .schedule-grid td {
     height: 100px;
     vertical-align: top;
     position: relative;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-mode .schedule-grid td {
+    background-color: #2e2e2e;
+    color: #ccc;
 }

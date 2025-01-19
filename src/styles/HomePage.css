@@ -1,25 +1,32 @@
-/* HomePage.css */
 .home-container {
     display: flex;
     justify-content: space-between;
-    background-color: #f7f7f7; /* Stonowana kolorystyka tła */
+    background-color: #f7f7f7;
     width: 100%;
+}
 
+.dark-mode .home-container {
+    background-color: #1e1e1e;
 }
 
 .post-list-section {
     padding: 20px;
-    background-color: #ffffff; /* Tło dla postów - białe dla kontrastu */
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     margin: 10px;
 }
 
+.dark-mode .post-list-section {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
 .auth-section {
     width: 55%;
     padding: 20px;
-    background-color: #ffffff; /* Tło dla panelu logowania - białe */
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -28,6 +35,15 @@
     margin: 10px;
 }
 
+.dark-mode .auth-section {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
 h1, h2 {
-    color: #ff8c00; /* Pomarańczowe detale dla nagłówków */
+    color: #ff8c00;
+}
+
+.dark-mode h1, .dark-mode h2 {
+    color: #ffa733;
 }

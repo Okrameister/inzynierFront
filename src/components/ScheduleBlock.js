@@ -4,35 +4,32 @@ import '../styles/ScheduleBlock.css';
 function ScheduleBlock({ blockData, onBlockClick }) {
     const { subject, room, classType } = blockData;
 
-    const getColorByClassType = (type) => {
+    const getClassNameByClassType = (type) => {
         switch (type) {
             case 'Wykład':
-                return '#D6EAF8'; // Jasnoniebieski
+                return 'schedule-block-lecture';
             case 'Ćwiczenia':
-                return '#D5F5E3'; // Jasnozielony
+                return 'schedule-block-exercise';
             case 'Laboratoria':
-                return '#FCF3CF'; // Jasnożółty
+                return 'schedule-block-lab';
             default:
-                return '#FFFFFF'; // Biały dla pustych bloków
+                return 'schedule-block-empty';
         }
     };
 
     return (
         <div
-            className="schedule-block"
-            style={{ backgroundColor: getColorByClassType(classType) }}
+            className={`schedule-block ${getClassNameByClassType(classType)}`}
             onClick={onBlockClick}
         >
             {subject ? (
                 <>
                     <div className="schedule-block-subject">{subject}</div>
                     <div className="schedule-block-room">Sala: {room}</div>
-                    <div className="schedule-block-type">
-                        {classType}
-                    </div>
+                    <div className="schedule-block-type">{classType}</div>
                 </>
             ) : (
-                <div style={{ color: '#ccc' }}>Dodaj zajęcia</div>
+                <div className="schedule-block-empty-text">Dodaj zajęcia</div>
             )}
         </div>
     );

@@ -1,16 +1,18 @@
-/* PostList.css */
-
-.post-list-container{
+.post-list-container {
     width: 100%;
 }
 
 .post-list-container h1 {
     font-size: 32px;
     font-weight: 700;
-    color: #ff8c00; /* Pomarańczowy akcent dla nagłówka */
+    color: #ff8c00;
     text-align: center;
     margin-bottom: 30px;
     width: 100%;
+}
+
+.dark-mode .post-list-container h1 {
+    color: #ffa733;
 }
 
 .post-item {
@@ -25,6 +27,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .post-item {
+    border: 1px solid #555;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
 
 .post-header-button {
     position: absolute;
@@ -39,3 +46,14 @@
     font-size: 16px;
 }
 
+.dark-mode .post-header-button {
+    background-color: #005bb5;
+}
+
+.post-header-button:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode .post-header-button:hover {
+    background-color: #004a99;
+}

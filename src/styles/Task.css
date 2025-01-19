@@ -1,5 +1,3 @@
-/* TaskComponent.css */
-
 .task-container {
     display: flex;
     height: 100vh;
@@ -10,9 +8,23 @@
     border-right: 1px solid #ddd;
     padding: 10px;
     background-color: #f7f7f7;
+    color: #333;
+}
+
+.dark-mode .task-list {
+    border-right: 1px solid #555;
+    background-color: #2e2e2e;
+    color: #ccc;
 }
 
 .task-content {
     flex: 1;
     padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-mode .task-content {
+    background-color: #1e1e1e;
+    color: #ccc;
 }

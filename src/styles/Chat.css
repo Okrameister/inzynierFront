@@ -1,10 +1,12 @@
-/* ChatComponent.css */
-
 .chat-container {
     display: flex;
     height: 100vh;
     background-color: #f7f7f7;
     font-family: Arial, sans-serif;
+}
+
+.dark-mode .chat-container {
+    background-color: #1e1e1e;
 }
 
 .chat-sidebar {
@@ -20,6 +22,11 @@
     width: 20%;
 }
 
+.dark-mode .chat-sidebar {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
 .new-conversation-button {
     background-color: #0069d9;
     color: #fff;
@@ -29,8 +36,17 @@
     font-size: 16px;
 }
 
+.dark-mode .new-conversation-button {
+    background-color: #005bb5;
+    color: #e0e0e0;
+}
+
 .new-conversation-button:hover {
     background-color: #005bb5;
+}
+
+.dark-mode .new-conversation-button:hover {
+    background-color: #004b9c;
 }
 
 .chat-content {
@@ -46,8 +62,17 @@
     width: 100%;
 }
 
+.dark-mode .chat-content {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
 .no-conversation {
     margin: auto;
     text-align: center;
     color: #777;
+}
+
+.dark-mode .no-conversation {
+    color: #ccc;
 }

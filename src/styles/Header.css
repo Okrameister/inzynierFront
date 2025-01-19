@@ -5,11 +5,16 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    position: fixed; /* Ustawienie nagłówka na stałą pozycję */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+    z-index: 1000;
+}
+
+.dark-mode .header-container {
+    background-color: rgb(94, 93, 93);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
 }
 
 .header-content {
@@ -48,8 +53,16 @@
     margin-right: 10px;
 }
 
+.dark-mode .header-profile-button {
+    background-color: #005bb5;
+}
+
 .header-profile-button:hover {
     background-color: #0069d9;
+}
+
+.dark-mode .header-profile-button:hover {
+    background-color: #004a99;
 }
 
 .header-logout-button {
@@ -66,8 +79,16 @@
     font-size: 16px;
 }
 
+.dark-mode .header-logout-button {
+    background-color: #ff4500;
+}
+
 .header-logout-button:hover {
     background-color: #ff7a00;
+}
+
+.dark-mode .header-logout-button:hover {
+    background-color: #ff6347;
 }
 
 body {
@@ -90,10 +111,35 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.dark-mode .header-admin-button {
+    background-color: #a82b39;
+}
+
 .header-admin-button:hover {
     background-color: #c82333;
 }
 
+.dark-mode .header-admin-button:hover {
+    background-color: #931d28;
+}
 
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
 
+.theme-icon {
+    font-size: 24px;
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
 
+.dark-mode .theme-icon {
+    color: #ffffff;
+}
+
+.theme-icon:hover {
+    opacity: 0.8;
+}

@@ -1,12 +1,17 @@
 .admin-container {
     padding: 20px;
-    background-color: #ffffff; /* Tło dla postów - białe dla kontrastu */
+    background-color: #ffffff; /* Jasne tło */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 10px 10px 10px 0;
     width: 100%;
     min-height: 100vh;
     max-width: 1320px;
+}
+
+.dark-mode .admin-container {
+    background-color: #1e1e1e; /* Ciemne tło */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .admin-header {
@@ -23,6 +28,11 @@
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+.dark-mode .admin-header {
+    background-color: rgba(50, 50, 50, 255); /* Ciemniejsze tło */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
 }
 
 .admin-logo-image {
@@ -46,8 +56,16 @@
     font-size: 16px;
 }
 
+.dark-mode .admin-logout-button {
+    background-color: #ff4500; /* Ciemniejszy odcień pomarańczowego */
+}
+
 .admin-logout-button:hover {
     background-color: #ff7a00;
+}
+
+.dark-mode .admin-logout-button:hover {
+    background-color: #ff6347;
 }
 
 .admin-content {
@@ -69,7 +87,7 @@
 }
 
 .admin-section {
-    background-color: white;
+    background-color: white; /* Jasne tło */
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -77,9 +95,13 @@
     min-height: 100vw;
 }
 
-.admin-section-users{
-    width: 30%;
+.dark-mode .admin-section {
+    background-color: #2e2e2e; /* Ciemne tło */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
 
+.admin-section-users {
+    width: 30%;
 }
 
 .admin-section-users h2 {
@@ -88,14 +110,26 @@
     color: #007bff;
 }
 
+.dark-mode .admin-section-users h2 {
+    color: #4facff; /* Jaśniejszy niebieski w trybie nocnym */
+}
+
 .admin-section p {
     color: #555;
 }
 
-.admin-users-list{
+.dark-mode .admin-section p {
+    color: #ccc; /* Jaśniejszy tekst */
+}
+
+.admin-users-list {
     list-style: none;
     padding: 0;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+}
+
+.dark-mode .admin-users-list {
+    color: #eee; /* Jasny tekst w trybie nocnym */
 }

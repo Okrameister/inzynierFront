@@ -11,15 +11,23 @@
     align-items: center;
     min-height: 100vh;
     max-width: 1320px;
+}
 
+.dark-mode .faculty-list-container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .faculty-list-container h1 {
     font-size: 32px;
     font-weight: 700;
-    color: #ff8c00; /* Pomarańczowy akcent dla nagłówka */
+    color: #ff8c00;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.dark-mode .faculty-list-container h1 {
+    color: #ffa733;
 }
 
 .faculty-list-container h2 {
@@ -27,6 +35,10 @@
     color: #333;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.dark-mode .faculty-list-container h2 {
+    color: #ccc;
 }
 
 .faculty-cards {
@@ -37,14 +49,21 @@
 }
 
 .faculty-card {
-    text-decoration: none; /* Usunięcie podkreślenia */
-    color: inherit; /* Utrzymanie koloru tekstu */
+    text-decoration: none;
+    color: inherit;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .faculty-card {
+    background-color: #2e2e2e;
+    border: 1px solid #555;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .faculty-image {
@@ -63,9 +82,17 @@
     color: #007bff;
 }
 
+.dark-mode .faculty-content h3 {
+    color: #4facff;
+}
+
 .faculty-content p {
     margin-bottom: 16px;
     color: #555;
+}
+
+.dark-mode .faculty-content p {
+    color: #ccc;
 }
 
 .faculty-details-button {
@@ -78,11 +105,23 @@
     font-size: 14px;
 }
 
+.dark-mode .faculty-details-button {
+    background-color: #005bb5;
+}
+
 .faculty-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.dark-mode .faculty-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
 .faculty-card:hover h3 {
-    color: #ff8c00; /* Zmiana koloru tytułu na pomarańczowy przy najechaniu */
+    color: #ff8c00;
+}
+
+.dark-mode .faculty-card:hover h3 {
+    color: #ffa733;
 }

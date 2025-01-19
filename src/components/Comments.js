@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 const isLogged = localStorage.getItem('isLogged');
+const loggedUserId = localStorage.getItem('userId'); // Zakładamy, że identyfikator użytkownika jest przechowywany w localStorage
 
 const Comments = ({ postId }) => {
     const [comments, setComments] = useState([]);
@@ -119,7 +120,7 @@ const Comments = ({ postId }) => {
                                 />
                             )}
                         </div>
-                        {isLogged && (
+                        {isLogged && comment.user.id === loggedUserId && (
                             <button
                                 className="comment-delete-button"
                                 onClick={() => handleDeleteComment(comment.id)}
@@ -135,7 +136,7 @@ const Comments = ({ postId }) => {
                     <textarea
                         value={newCommentContent}
                         onChange={(e) => setNewCommentContent(e.target.value)}
-                        placeholder="Write a comment..."
+                        placeholder="Napisz komentarz..."
                         className="new-comment-textarea"
                         required
                     />

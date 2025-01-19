@@ -16,6 +16,12 @@
     padding: 20px;
     border-radius: 5px;
     width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .modal-content {
+    background-color: #2e2e2e;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 .form-group {
@@ -26,6 +32,11 @@
 .form-group label {
     display: block;
     margin-bottom: 5px;
+    color: #333;
+}
+
+.dark-mode .form-group label {
+    color: #ccc;
 }
 
 .form-group input,
@@ -33,6 +44,16 @@
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select {
+    background-color: #1e1e1e;
+    border: 1px solid #555;
+    color: #ccc;
 }
 
 .modal-actions {
@@ -44,6 +65,8 @@
 .modal-actions button {
     margin-left: 10px;
     padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 .save-button {
@@ -52,10 +75,34 @@
     border: none;
 }
 
+.dark-mode .save-button {
+    background-color: #3e8e41;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.dark-mode .save-button:hover {
+    background-color: #357a38;
+}
+
 .cancel-button {
     background-color: #f44336;
     color: white;
     border: none;
+}
+
+.dark-mode .cancel-button {
+    background-color: #d32f2f;
+}
+
+.cancel-button:hover {
+    background-color: #e53935;
+}
+
+.dark-mode .cancel-button:hover {
+    background-color: #c62828;
 }
 
 .delete-button {
@@ -63,4 +110,16 @@
     color: white;
     border: none;
     margin-right: auto;
+}
+
+.dark-mode .delete-button {
+    background-color: #616161;
+}
+
+.delete-button:hover {
+    background-color: #757575;
+}
+
+.dark-mode .delete-button:hover {
+    background-color: #424242;
 }

@@ -1,13 +1,14 @@
 .schedule-block {
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
     width: 100%;
     height: 100%;
-    cursor: pointer;
+    box-sizing: border-box;
+    border: none;
 }
 
-.schedule-block div {
-    padding: 5px;
-}
-
+/* Styl tekstu w bloku */
 .schedule-block-subject {
     font-weight: bold;
     margin-bottom: 5px;
@@ -19,8 +20,47 @@
     margin-bottom: 2px;
 }
 
-.schedule-block-empty {
+/* Styl dla pustego bloku */
+.schedule-block-empty-text {
     color: #ccc;
     text-align: center;
     margin-top: 35px;
+}
+
+.dark-mode .schedule-block-empty-text {
+    color: #555;
+}
+
+/* Kolory dla typów zajęć */
+.schedule-block-lecture {
+    background-color: #D6EAF8; /* Jasnoniebieski */
+}
+
+.dark-mode .schedule-block-lecture {
+    background-color: #355c7d; /* Ciemnoniebieski */
+}
+
+.schedule-block-exercise {
+    background-color: #D5F5E3; /* Jasnozielony */
+}
+
+.dark-mode .schedule-block-exercise {
+    background-color: #2a6d4e; /* Ciemnozielony */
+}
+
+.schedule-block-lab {
+    background-color: #FCF3CF; /* Jasnożółty */
+}
+
+.dark-mode .schedule-block-lab {
+    background-color: #7f6a2a; /* Ciemnożółty */
+}
+
+.schedule-block-empty {
+    background-color: #FFFFFF; /* Biały dla pustych bloków */
+}
+
+.dark-mode .schedule-block-empty {
+    background-color: #2e2e2e; /* Ciemny dla pustych bloków */
+    color: #ccc;
 }

@@ -1,5 +1,3 @@
-/* TaskList.css */
-
 .create-task-button {
     width: 100%;
     padding: 10px;
@@ -10,8 +8,16 @@
     margin-bottom: 10px;
 }
 
+.dark-mode .create-task-button {
+    background-color: #005bb5;
+}
+
 .create-task-button:hover {
     background-color: #005bb5;
+}
+
+.dark-mode .create-task-button:hover {
+    background-color: #004a99;
 }
 
 .task-list ul {
@@ -23,8 +29,20 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.dark-mode .task-list li {
+    border-bottom: 1px solid #555;
+    color: #ccc;
+    background-color: #2e2e2e;
 }
 
 .task-list li:hover {
     background-color: #e6e6e6;
+}
+
+.dark-mode .task-list li:hover {
+    background-color: #3a3a3a;
 }
