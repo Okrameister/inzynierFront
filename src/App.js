@@ -17,6 +17,8 @@ import FacultyList from './components/FacultyList';
 import FacultyDetails from './components/FacultyDetails';
 import NewsList from './components/NewsList';
 import NewsForm from './components/NewsForm';
+import EventDashboard from './components/EventDashboard';
+import EventDetails from './components/EventDetails';
 
 import './App.css';
 
@@ -45,6 +47,8 @@ function App() {
                             <Route path="/faculty/:id" element={<FacultyDetails />} />
                             <Route path="/news" element={<NewsList />} />
                             <Route path="/create-news" element={<NewsForm />} />
+                            <Route path="/events" element={<EventDashboard />} />
+                            <Route path="/event/:id" element={<EventDetails />} />
                         </Routes>
                     </div>
                 </div>

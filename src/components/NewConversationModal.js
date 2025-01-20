@@ -61,6 +61,7 @@ const NewConversationModal = ({ onClose, onCreate, token }) => {
                 userIds: selectedUsers,
                 name: isGroup ? name : '',
                 isGroup,
+                eventId: null,
             }),
         })
             .then((response) => response.json())

@@ -1,0 +1,315 @@
+/* Główna struktura */
+.event-dashboard {
+    margin-top: 10px;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.dark-mode .event-dashboard {
+    background-color: #1e1e1e;
+    color: #ccc;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    max-width: 1350px;
+    margin-left: 10px;
+    min-height: 100vw;
+}
+
+/* Sidebar z nadchodzącymi wydarzeniami */
+.dashboard-sidebar {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 250px;
+}
+
+.dark-mode .dashboard-sidebar {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-title {
+    margin-bottom: 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dark-mode .dashboard-title {
+    background-color: #ff8c00; /* Pomarańczowe tło */
+    color: #fff; /* Tekst pozostaje biały */
+}
+
+.dashboard-no-events {
+    color: #777;
+    text-align: center;
+}
+
+.dark-mode .dashboard-no-events {
+    color: #aaa;
+}
+
+.dashboard-event-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-mode .dashboard-event-item {
+    border: 1px solid #555;
+    background-color: #3a3a3a;
+}
+
+.dashboard-event-item:hover {
+    background-color: #e6e6e6;
+}
+
+.dark-mode .dashboard-event-item:hover {
+    background-color: #555;
+}
+
+.dashboard-event-title {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.dark-mode .dashboard-event-title {
+    color: #ccc;
+}
+
+.dashboard-event-date {
+    font-size: 14px;
+    color: #555;
+}
+
+.dark-mode .dashboard-event-date {
+    color: #aaa;
+}
+
+.dashboard-event-description {
+    font-size: 14px;
+    color: #777;
+}
+
+.dark-mode .dashboard-event-description {
+    color: #aaa;
+}
+
+/* Sekcja kalendarza */
+.dashboard-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-mode .dashboard-content {
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-title {
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dark-mode .calendar-title {
+    background-color: #ff8c00; /* Pomarańczowe tło */
+    color: #fff; /* Tekst pozostaje biały */
+}
+
+.calendar-nav-button {
+    background-color: #0069d9;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dark-mode .calendar-nav-button {
+    background-color: #005bb5;
+}
+
+.calendar-nav-button:hover {
+    background-color: #005bb5;
+}
+
+.dark-mode .calendar-nav-button:hover {
+    background-color: #004a99;
+}
+
+.calendar-add-button {
+    background-color: #0069d9;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.dark-mode .calendar-add-button {
+    background-color: #005bb5;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.dark-mode .calendar-day-header {
+    background-color: #3a3a3a;
+    border-color: #555;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: relative;
+}
+
+.dark-mode .calendar-day {
+    border-color: #555;
+    background-color: #3a3a3a;
+}
+
+.calendar-day.calendar-today {
+    border: 3px solid #ff4500;
+    font-weight: bold;
+    background-color: #ffe4b5;
+    border-radius: 8px;
+}
+
+.dark-mode .calendar-day.calendar-today {
+    background-color: #664a2e;
+}
+
+.calendar-day.calendar-has-event {
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.dark-mode .calendar-day.calendar-has-event {
+    background-color: #3b7a3b;
+}
+
+.calendar-day.calendar-has-event:hover {
+    background-color: #90ee90;
+}
+
+.dark-mode .calendar-day.calendar-has-event:hover {
+    background-color: #4caf50;
+}
+
+.calendar-day.calendar-day-empty {
+    background-color: transparent;
+    border: none;
+    cursor: default;
+}
+
+.dashboard-event-item.today-event {
+    border: 2px solid red;
+    position: relative;
+}
+
+.dashboard-event-item.today-event::after {
+    content: "Dzisiaj";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dark-mode .dashboard-event-item.today-event::after {
+    background-color: #b52d2a;
+}
+
+/* Ikonka edycji */
+.edit-icon {
+    color: #555;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.dark-mode .edit-icon {
+    color: #aaa;
+}
+
+.edit-icon:hover {
+    color: #0069d9;
+}
+
+.dark-mode .edit-icon:hover {
+    color: #4facff;
+}
+
+/* Ukrywanie ikonki edycji w kalendarzu */
+.calendar-day-content {
+    position: relative;
+    z-index: 1;
+}
+
+.calendar-day:hover .edit-icon {
+    display: block;
+}
+
+.calendar-day .edit-icon {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+}

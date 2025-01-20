@@ -69,7 +69,7 @@ const Sidebar = () => {
         <div className="sidebar-container">
             {/* Przyciski "Plan lekcji" i "Zadania" */}
             <button className="sidebar-button" onClick={() => navigate('/chat')}>Wiadomości</button>
-            <button className="sidebar-button" onClick={() => navigate('/calendar')}>Kalendarz wydarzeń</button>
+            <button className="sidebar-button" onClick={() => navigate('/events')}>Kalendarz wydarzeń</button>
             <button className="sidebar-button" onClick={() => navigate(`/news`)}>Aktualności</button>
             <button className="sidebar-button" onClick={() => navigate('/faculties')}>Moja uczelnia</button>
             <button className="sidebar-button" onClick={() => navigate('/schedule')}>Plan zajęć</button>

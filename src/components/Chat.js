@@ -19,16 +19,21 @@ const Chat = () => {
             }
         })
             .then(response => response.json())
-            .then(data => setConversations(data))
+            .then(data => setConversations(filterConversations(data)))
             .catch(error => console.error('Błąd podczas pobierania konwersacji:', error));
     }, [token]);
+
+    const filterConversations = (conversations) => {
+        return conversations.filter(conversation => conversation.eventId === null);
+    };
 
     const handleConversationClick = (conversation) => {
         setSelectedConversation(conversation);
     };
 
     const handleNewConversation = (newConversation) => {
-        setConversations([...conversations, newConversation]);
+        const filteredConversations = filterConversations([...conversations, newConversation]);
+        setConversations(filteredConversations);
         setShowNewConversationModal(false);
         setSelectedConversation(newConversation);
     };
