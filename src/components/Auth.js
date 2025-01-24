@@ -57,7 +57,7 @@ function Auth({ isLoginDefault = true }) {
                 gender: 'Mężczyzna'
             });
 
-            window.location.href = isSignup ? '/auth' : '/';
+            window.location.href = isSignup ? '/SignToGroup' : '/';
 
         } catch (error) {
             setError('An error occurred. Please check your details and try again.');

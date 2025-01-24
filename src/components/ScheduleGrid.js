@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import ScheduleBlock from './ScheduleBlock';
 import ScheduleForm from './ScheduleForm';
 import '../styles/ScheduleGrid.css';
@@ -13,24 +15,23 @@ function ScheduleGrid() {
     const [selectedBlock, setSelectedBlock] = useState(null);
     const [isFormOpen, setIsFormOpen] = useState(false);
 
-    // Funkcja do normalizacji czasu
+    const scheduleContainerRef = useRef(null); // Referencja do całego widoku
+
     const normalizeTime = (timeStr) => {
         if (!timeStr) {
-            return null; // Lub zwróć wartość domyślną, jeśli to ma sens w Twojej aplikacji
+            return null;
         }
         const [hours, minutes] = timeStr.split(':');
         const normalizedHours = hours.length === 1 ? '0' + hours : hours;
         return `${normalizedHours}:${minutes}`;
     };
 
-
-    // Pobieranie danych z back-endu
     useEffect(() => {
         const token = localStorage.getItem('token');
         fetch('/api/schedule', {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`, // Dodaj nagłówek Authorization
+                'Authorization': `Bearer ${token}`,
             },
         })
             .then((response) => response.json())
@@ -72,7 +73,7 @@ function ScheduleGrid() {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`, // Dodaj nagłówek Authorization
+                'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify({
                 ...selectedBlock,
@@ -102,7 +103,7 @@ function ScheduleGrid() {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`, // Dodaj nagłówek Authorization, jeśli jest wymagany
+                'Authorization': `Bearer ${token}`,
             },
         })
             .then((response) => {
@@ -167,9 +168,45 @@ function ScheduleGrid() {
         );
     };
 
+    const exportToPDF = async () => {
+        if (scheduleContainerRef.current) {
+            const canvas = await html2canvas(scheduleContainerRef.current, { scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF('landscape', 'mm', 'a4');
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            pdf.save('schedule.pdf');
+        }
+    };
+
+    const clearSchedule = () => {
+        if (scheduleData) {
+            Object.keys(scheduleData).forEach((day) => {
+                Object.keys(scheduleData[day]).forEach((time) => {
+                    const block = scheduleData[day][time];
+                    if (block && block.id) {
+                        handleFormDelete(block.id);
+                    }
+                });
+            });
+        }
+    };
+
+
     return (
         <div>
+            <button onClick={exportToPDF} className="schedule-export-button">
+                Eksportuj do PDF
+            </button>
+
+            <button onClick={clearSchedule} className="schedule-clear-button">
+                Wyczyść plan
+            </button>
+
+        <div ref={scheduleContainerRef} className="schedule-container">
             {renderGrid()}
+
             {isFormOpen && (
                 <ScheduleForm
                     onSubmit={handleFormSubmit}
@@ -178,6 +215,7 @@ function ScheduleGrid() {
                     onDelete={handleFormDelete}
                 />
             )}
+        </div>
         </div>
     );
 }

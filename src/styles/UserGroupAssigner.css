@@ -1,0 +1,56 @@
+/* UserGroupAssigner.css */
+
+.uga-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.uga-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #ff8c00;
+    color: white;
+    padding: 20px;
+}
+
+.uga-group-item {
+    align-items: center;
+    margin: 5px 0;
+}
+
+.uga-group-name {
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.uga-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.uga-icon:hover {
+    transform: scale(1.2);
+}
+
+.uga-icon.uga-assigned {
+    color: green;
+    pointer-events: none;
+}
+
+.uga-icon.uga-assign {
+    color: blue;
+}
+
+.uga-button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}

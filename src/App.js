@@ -19,6 +19,7 @@ import NewsList from './components/NewsList';
 import NewsForm from './components/NewsForm';
 import EventDashboard from './components/EventDashboard';
 import EventDetails from './components/EventDetails';
+import UserGroupAssigner from "./components/UserGroupAssigner";
 
 import './App.css';
 
@@ -49,6 +50,7 @@ function App() {
                             <Route path="/create-news" element={<NewsForm />} />
                             <Route path="/events" element={<EventDashboard />} />
                             <Route path="/event/:id" element={<EventDetails />} />
+                            <Route path="/signToGroup" element={<UserGroupAssigner />} />
                         </Routes>
                     </div>
                 </div>

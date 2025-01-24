@@ -12,6 +12,8 @@ function ScheduleBlock({ blockData, onBlockClick }) {
                 return 'schedule-block-exercise';
             case 'Laboratoria':
                 return 'schedule-block-lab';
+            case 'Zajęcia pozalekcyjne':
+                return 'schedule-block-other';
             default:
                 return 'schedule-block-empty';
         }

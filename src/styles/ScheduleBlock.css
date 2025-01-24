@@ -56,6 +56,14 @@
     background-color: #7f6a2a; /* Ciemnożółty */
 }
 
+.schedule-block-other {
+    background-color: #dccffc; /* Jasnofioletowy */
+}
+
+.dark-mode .schedule-block-other {
+    background-color: #492a7f; /* Ciemnofioletowy */
+}
+
 .schedule-block-empty {
     background-color: #FFFFFF; /* Biały dla pustych bloków */
 }

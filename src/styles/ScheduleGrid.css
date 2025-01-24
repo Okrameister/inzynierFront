@@ -37,3 +37,34 @@
     background-color: #2e2e2e;
     color: #ccc;
 }
+
+.schedule-clear-button{
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.dark-mode .schedule-clear-button{
+    background-color: #ff4500;
+}
+
+.schedule-export-button{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.dark-mode .schedule-export-button{
+    background-color: #004a99;
+}

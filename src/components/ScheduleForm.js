@@ -55,6 +55,8 @@ function ScheduleForm({ onSubmit, onClose, initialData, onDelete }) {
                             <option value="Wykład">Wykład</option>
                             <option value="Ćwiczenia">Ćwiczenia</option>
                             <option value="Laboratoria">Laboratoria</option>
+                            <option value="Zajęcia pozalekcyjne">Zajęcia pozalekcyjne</option>
+
                         </select>
                     </div>
                     <div className="modal-actions">
